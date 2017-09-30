@@ -1,0 +1,61 @@
+.header
+	&__menu
+		padding: 10px 0
+		background-color: #131c27
+	&__container
+		display: flex
+		justify-content: space-between
+		padding: 28px 15px
+	&__phones
+		position: relative
+		display: flex
+		padding-left: 60px
+		padding-right: 15px
+		&-item
+			&:not(:first-child)
+				margin-left: 50px
+		&-city
+			display: block
+			margin-bottom: 7px
+			color: $gray
+		&-num
+			color: $black
+			font-size: 28px
+			+trs
+			.no-touch &:hover
+				color: $blue-dark
+		.icon
+			position: absolute
+			top: 5px
+			left: 10px
+			transform: rotate(12deg)
+			fill: $blue-dark
+			font-size: 42px
+	&__call
+		text-align: center
+		&-btn
+			margin-bottom: 5px
+			
+.nav
+	background: $blue-dark
+	&__list
+		max-width: 1170px
+		margin: 0 auto
+		padding: 0 15px
+		text-align: center
+		font-size: 0
+		+justify
+		li
+			display: inline-block
+			vertical-align: middle
+			height: 55px
+			padding: 0 20px
+			line-height: 55px
+			&.is-active
+				background: $white
+				border-radius: 5px 5px 0 0
+			&.is-active a
+				color: $blue-dark
+			a
+				color: $white
+				font-size: 16px

@@ -1,0 +1,88 @@
+.info
+	padding: 0 0 85px
+	background: url("../img/bg/info_bg.jpg") no-repeat 50% 50%/cover
+	&__menu
+		padding: 22px 0 18px
+		background: rgba($blue-dark, .5)
+		&-list
+			max-width: 1140px
+			margin: 0 auto
+			padding: 0 15px
+			font-size: 0
+			text-align: center
+		&-item
+			display: inline-block
+			vertical-align: top
+			margin: 0 30px
+		&-link
+			text-transform: uppercase
+			color: $white
+			font-size: 17px
+			line-height: 1
+			border-bottom: 1px solid $white
+			transition: border-color .3s ease
+			.no-touch &:hover
+				border-bottom-color: transparent
+	&__row
+		margin: 90px 0 50px
+		font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		width: 25%
+		text-align: center
+		&-icon
+			position: relative
+			height: 80px
+			margin: 0 auto 20px
+			text-align: center
+			&::before, &::after
+				content: ''
+			&::after
+				display: block
+				margin: 0 auto
+			&::before
+				position: absolute
+				top: 0
+				right: 0
+			&_1
+				width: 76px
+				&::after
+					+s(76, 72, -5, -162, info)
+				&::before
+					+s(63, 58, -5, -466, info)
+			&_2
+				width: 78px
+				&::after
+					+s(78, 76, -5, -81, info)
+				&::before
+					+s(78, 76, -5, 0, info)
+			&_3
+				width: 72px
+				&::after
+					+s(72, 76, -5, -311, info)
+				&::before
+					top: 5px
+					right: 4px
+					+s(66, 69, -5, -392, info)
+			&_4
+				width: 75px
+				&::after
+					+s(75, 67, -5, -239, info)
+				&::before
+					right: 5px
+					+s(38, 47, -5, -529, info)
+		&-text
+			max-width: 210px
+			margin: 0 auto
+			color: $white
+			font-size: 20px
+			line-height: 25px
+			
+	&__timer-wrap
+		max-width: 600px
+		margin: 0 auto
+		text-align: center
+	&__timer-title
+		color: $white
+		+f('web700', 30)

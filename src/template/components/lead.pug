@@ -1,0 +1,67 @@
+if lead ? lead : lead = []
+if lead.title ? lead.title : lead.title = 'Наши лидеры'
+if lead.btn ? lead.btn : lead.btn = 'ПРИСОЕДИНЯЙТЕСЬ К НАМ'
+-
+	leadList = [{
+	img: 1,
+	name: 'Илья Руднев',
+	pos: 'Генеральный директор'
+	}, {
+	img: 2,
+	name: 'Алина Бекер',
+	pos: 'Руководитель юридической фирмы'
+	}, {
+	img: 3,
+	name: 'Алексей Филимонов',
+	pos: 'Руководитель коллекторского агенства'
+	}, {
+	img: 4,
+	name: 'Галина Мельник',
+	pos: 'Руководитель Бухгалтерского центра'
+	}, {
+	img: 5,
+	name: 'Чурилов Вячеслав Руководитель',
+	pos: 'Магазина готового бизнеса'
+	}, {
+	img: 6,
+	name: 'Новиков Дмитрий',
+	pos: 'Руководитель Центра недвижимости'
+	}, {
+	img: 7,
+	name: 'Стрелец Вероника',
+	pos: 'HR-директор'
+	}, {
+	img: 8,
+	name: 'Валерий Маюшкин',
+	pos: 'Коммерческий директор'
+	}]
+
+//begin lead
++b.SECTION.lead(class= lead.classMod ? lead.classMod : '')
+	+e.container.container
+		+b.H3.title-lg= lead.title
+		+e.list
+			mixin leadItem(item)
+				+e.item
+					+e.item-img
+						+e.IMG(src=`static/img/content/lead-${item.img}.png` alt='image')
+					+e.item-info
+						+e.SPAN.item-name= item.name
+						+e.SPAN.item-pos= item.pos
+					+e.item-details
+						+e.P
+							+e.STRONG Окончила
+							= ' '
+							| Самарский Государственный Экономический Университет.
+						+e.P
+							+e.STRONG Специальность:
+							= ' '
+							| Юриспруденция.
+						+e.P
+							+e.STRONG Специализация:
+							= ' '
+							| Правовое обеспечение хозяйственной деятельности. 2002 -2003 г. работала помощником мирового судьи Кировского района.  В ГК «Бизнес-Гарант»  с 2006 года.
+			each item in leadList
+				+leadItem(item)
+
+		+e.A.btn.btn(href='#!')= lead.btn

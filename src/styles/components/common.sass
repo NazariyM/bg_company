@@ -1,0 +1,47 @@
+// basic styles
+body
+  min-width: 320px
+  color: $black
+  +f('web400', 16, 22)
+
+// layout
+.out
+  overflow: hidden
+
+.container
+  max-width: 1140px
+  margin: 0 auto
+  padding: 0 15px
+
+// titles
+.title-lg
+  +f('web400', 50)
+  color: $black
+  text-align: center
+.title-md
+  @extend .title-lg
+  +f('web400', 35)
+  
+.is-hidden
+  +hide-el
+
+// buttons
+.btn
+  display: inline-block
+  vertical-align: top
+  padding: 0 26px
+  height: 50px
+  border-radius: 5px
+  background: $orange-light
+  border: 3px solid #ebedef
+  color: $white
+  +f('web700', 15, 50)
+  text-transform: uppercase
+  +trs
+  &_sm
+    padding: 0 23px
+    height: 36px
+    background: $orange
+    text-transform: none
+    +f('web400', 16, 30)
+  .no-touch &:hover

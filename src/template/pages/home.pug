@@ -1,0 +1,16 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Бизнес Гарант';
+
+block main
+	main.content(data-page='home')
+
+		//- info
+		include ../components/info
+
+		//- story
+		include ../components/story
+
+		//- leaders
+		include ../components/lead

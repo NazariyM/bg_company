@@ -1,0 +1,30 @@
+if info ? info : info = []
+
+//begin info
++b.SECTION.info
+	+e.menu
+		+e.UL.menu-list
+			-menuList = ['О компании', 'Работа у нас', 'Все работы', 'Контакты']
+			for menuLink in menuList
+				li.info__menu-item: a.info__menu-link(href='#!')= menuLink
+	+e.container.container
+		+e.row
+			+e.item
+				+e.item-icon._1
+				+e.P.item-text 10 филиалов в Самаре, Тольятти и в Ижевске
+			+e.item
+				+e.item-icon._2
+				+e.P.item-text Бесплатные  корпоративы
+			+e.item
+				+e.item-icon._3
+				+e.P.item-text Более 200  сотрудников в штате
+			+e.item
+				+e.item-icon._4
+				+e.P.item-text Корпоративное  обучение
+
+		+e.timer-wrap
+			+e.timer-title Мы выплачиваем зарплату вовремя уже:
+			+e.timer.js-info-timer
+				+e.timer-digit._year
+				+e.timer-digit._month
+				+e.timer-digit._day

@@ -1,0 +1,34 @@
+//begin header
++b.HEADER.header
+	+b.NAV.nav
+		+e.UL.list
+			-
+				navList = [
+				'Группа компаний',
+				'Юридические услуги',
+				'Бухгалтерские услуги',
+				'Коллекторские услуги',
+				'Центр недвижимоси',
+				'Готовый бизнес'
+				]
+			for navLink, index in navList
+				-activeIndex = 3
+				li(class= index === activeIndex - 1 ? 'is-active' : ''): a(href='#!')= navLink
+
+	+e.container.container
+		+e.A.logo(href='#!')
+			+e.IMG(src='static/img/logos/logo.png' alt='Бизнес Гарант')
+
+		+e.phones
+			+e.phones-item
+				+e.SPAN.phones-city Самара
+				+e.A.phones-num(href='tel:78462502222') 7 (846) 250-22-22
+				+i('phone')
+			+e.phones-item
+				+e.SPAN.phones-city Тольятти
+				+e.A.phones-num(href='tel:78482201000') 7 (8482) 201-000
+
+		+e.call
+			+e.BUTTON.call-btn.btn._sm(type='button') Заказать звонок
+			+e.P Звоните нам, Пн-Пт 
+			+e.P с 8:00 до 20:00
