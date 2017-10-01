@@ -1,0 +1,37 @@
+.c-tabs
+	$parent: &
+	&__tabs
+		&-nav
+			pointer-events: none
+			font-size: 0
+		&-el
+			pointer-events: auto
+			display: inline-block
+			vertical-align: middle
+			padding: 0 27px
+			height: 50px
+			border-radius: 5px
+			border: 3px solid rgba(0, 0, 0, 0.05)
+			background-color: #005792
+			color: $white
+			+f('web700', 16, 44)
+			cursor: pointer
+			+trs
+			&:not(:first-child)
+				margin-left: 10px
+			&.is-active
+				pointer-events: none
+				background-color: #ed9c32
+	&__tab
+		&:not(:first-child)
+			display: none
+	&_maps
+		#{$parent}__tabs-nav
+			position: absolute
+			top: 50px
+			left: 50%
+			width: 100%
+			max-width: 1130px
+			padding: 0 15px
+			transform: translateX(-50%)
+			z-index: 1

@@ -1,6 +1,5 @@
-// import { TweenMax } from 'gsap';
-import { TweenMax, CSSPlugin } from 'gsap';
-import { css, Resp } from '../modules/dev/helpers';
+import { TweenMax } from 'gsap';
+import { css } from '../modules/dev/helpers';
 
 export default class CTabs {
   constructor(el) {
@@ -61,7 +60,7 @@ export default class CTabs {
         $nextTab.show();
         TweenMax.staggerFromTo($nextTab.children().children(), speed, {
           autoAlpha: 0,
-          y: -50
+          y: 50
         }, {
           autoAlpha: 1,
           y: 0

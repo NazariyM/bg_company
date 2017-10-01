@@ -1,0 +1,32 @@
+.footer
+	&__info
+		padding: 30px 0
+		background: $blue-dark
+		&-container
+			display: flex
+	&__logo
+		&-link
+			display: block
+			margin-bottom: 15px
+		p
+			color: $white
+	&__link-list
+		margin-left: 80px
+		li
+			&:not(:first-child)
+				margin-top: 10px
+		a
+			color: $white
+			border-bottom: 1px dashed rgba($white, .4)
+			+trs
+			.no-touch &:hover
+				border-bottom-color: $white
+	&__container
+		display: flex
+		padding: 30px 15px
+	&__dev
+		margin-left: auto
+		
+.dev
+	padding-left: 20px
+	background: url("../img/logos/dev.png") no-repeat

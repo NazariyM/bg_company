@@ -12,5 +12,65 @@ block main
 		//- story
 		include ../components/story
 
+		//begin goal
+		+b.SECTION.goal
+			+b.H3.title-lg Наша эволюционная цель
+			+e.bg(style='background-image: url(static/img/bg/goal_bg.jpg)')
+				+e.container.container
+					+e.slider.js-goal-slider
+						-itemCount = 0
+						while itemCount < 4
+							+e.item
+								+e.item-img
+									+e.IMG(src=`static/img/bg/goal_boat.png` alt='image')
+								+e.item-text
+									+e.P Мы основываем свои действия на вечных ценностях и уверены, что строить бизнес можно только так.
+							-itemCount++
+
 		//- leaders
 		include ../components/lead
+
+		//begin awards
+		+b.SECTION.awards
+			+e.container.container
+				+b.H3.title-lg Наши достижения и награды
+				+e.slider.js-awards-slider
+					-itemCount = 0
+					while itemCount < 4
+						+e.item
+							+e.item-inner
+								+e.item-img
+									+e.IMG(src=`static/img/content/awards-1.png` alt='image')
+								+e.item-text
+									+e.H5.item-title Волга Бренд 2016,
+										+e.SPAN “Лучшее решение в видео и радио-рекламе”
+									+e.P Группа компаний “Бизнес-гарант” удостоилась 2-го места в номинации “Лучшее решение в видео и радио-рекламе” На ежегодной премии лучших маркетинговых реший “Волга Бренд 2016”
+						+e.item
+							+e.item-inner
+								+e.item-img
+									+e.IMG(src=`static/img/content/awards-2.png` alt='image')
+								+e.item-text
+									+e.H5.item-title Топ 50
+										+e.SPAN от журнала “Собака”
+									+e.P Группа компаний “Бизнес-гарант” и Илья Владимирович Руднев победили в категории “Бизнес” премии топ 50 от журнала “Собака”
+						-itemCount++
+
+		//begin check-news
+		+b.SECTION.check-news
+			+e.H3.title.title-lg Будь первым в курсе наших новостей
+			include ../components/socials
+
+		//begin favorites
+		+b.SECTION.favs
+			+e.container.container
+				+b.H3.title-lg Наши любимые клиенты
+				+e.slider.js-favs-slider
+					-favsList = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+					for favsImg in favsList
+						+e.slider-item
+							+e.A.slider-link(href='#!')
+								+e.IMG(src=`static/img/content/favs-${favsImg}.jpg` alt='image')
+
+		//begin contact-maps
+		+b.SECTION.contact-maps
+			include ../components/contact-maps

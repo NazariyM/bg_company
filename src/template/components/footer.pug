@@ -1,2 +1,44 @@
-mixin footer()
-    footer
+// begin footer
++b.footer
+	+e.info
+		+e.info-container.container
+			+e.logo
+				+e.A.logo-link(href='#!')
+					+e.IMG(src='static/img/logos/logo_white.png' alt='Бизнес Гарант')
+				+e.P ГК "Бизнес-Гарант", © 2005-2017
+
+			+e.UL.link-list
+				-linkList = ['О компании', 'Юридические услуги', 'Бухгалтерские услуги']
+				for link in linkList
+					li: a(href='#!')= link
+
+			+e.UL.link-list
+				-linkList = ['Коллекторские услуги', 'Центр недвижимости', 'Готовый бизнес']
+				for link in linkList
+					li: a(href='#!')= link
+
+			+e.UL.link-list
+				-linkList = ['Корпоративный сайт', 'Вакансии', 'Политика конфиденциальности']
+				for link in linkList
+					li: a(href='#!')= link
+
+	+e.container.container
+		+b.contacts._footer
+			+e.item
+				+e.A.num(href='tel:78462502222') +7 (846) 250-22-22
+				+e.SPAN.city Самара, ул. Красноармейская, 72
+				+e.A.mail.link(href='#!') info@bg63.ru
+			+e.item
+				+e.A.num(href='tel:78482201000') +7 (8482) 201-000
+				+e.SPAN.city Тольятти, ул. Юбилейная, 31И оф. 301
+				+e.A.mail.link(href='#!') info@bg63.ru
+			+e.item
+				+e.A.num(href='tel:73412561044') +7(3412) 56-10-44
+				+e.SPAN.city г. Ижевск, ул. 10 лет октября, д.60
+				+e.A.mail.link(href='#!') info@bg63.ru
+
+		+e.dev.dev
+			+e.P Создано руками 
+				+e.BR
+				| студии
+				+b.A.link(href='#!') “Актиком”

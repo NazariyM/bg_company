@@ -16,6 +16,7 @@ body
 // titles
 .title-lg
   +f('web400', 50)
+  line-height: 1
   color: $black
   text-align: center
 .title-md
@@ -45,3 +46,36 @@ body
     text-transform: none
     +f('web400', 16, 30)
   .no-touch &:hover
+  
+//sliders defaults
+.slider-btn
+  position: absolute
+  z-index: 1
+  top: 50%
+  margin-top: -20px
+  width: 40px
+  height: 40px
+  background-color: $blue
+  border-radius: 50%
+  font-size: 0
+  text-align: center
+  +trs
+  &:hover
+    background-color: $blue-dark
+  .icon
+    position: relative
+    font-size: 18px
+  &_prev
+    left: -65px
+  &_next
+    right: -65px
+    .icon
+      left: 2px
+      
+// link
+.link
+  color: $blue
+  border-bottom: 1px solid $blue
+  +trs
+  .no-touch &:hover
+    border-bottom-color: transparent

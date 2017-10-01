@@ -31,7 +31,6 @@ html(lang='ru')
 				script.
 					document.createElement('picture');
 
-			// Header
 			block header
 				include ../components/header
 
@@ -39,10 +38,11 @@ html(lang='ru')
 			block main
 				main
 
-			// Footer
 			block footer
 				include ../components/footer
 			// Scripts
 			block scripts
+				if yMap !== false
+					script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 				script(src='static/js/index.jquery' + suffix + '.js')
 				script(src='static/js/index' + suffix + '.js')

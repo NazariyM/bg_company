@@ -19,14 +19,14 @@
 		+e.A.logo(href='#!')
 			+e.IMG(src='static/img/logos/logo.png' alt='Бизнес Гарант')
 
-		+e.phones
-			+e.phones-item
-				+e.SPAN.phones-city Самара
-				+e.A.phones-num(href='tel:78462502222') 7 (846) 250-22-22
+		+b.contacts._header
+			+e.item
+				+e.SPAN.city Самара
+				+e.A.num(href='tel:78462502222') 7 (846) 250-22-22
 				+i('phone')
-			+e.phones-item
-				+e.SPAN.phones-city Тольятти
-				+e.A.phones-num(href='tel:78482201000') 7 (8482) 201-000
+			+e.item
+				+e.SPAN.city Тольятти
+				+e.A.num(href='tel:78482201000') 7 (8482) 201-000
 
 		+e.call
 			+e.BUTTON.call-btn.btn._sm(type='button') Заказать звонок

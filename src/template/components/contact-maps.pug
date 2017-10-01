@@ -1,0 +1,16 @@
+if contactMap ? contactMap : contactMap = []
+
+//begin contact-maps
++b.SECTION.contact-maps
+	+b.c-tabs._maps
+		+e.tabs-nav
+			+e.tabs-el.is-active Самара
+			+e.tabs-el Тольятти
+			+e.tabs-el Ижевск
+		+e.tabs-for
+			+e.tab
+				+b.contact-maps__map#contact-map-1
+			+e.tab
+				+b.contact-maps__map#contact-map-2
+			+e.tab
+				+b.contact-maps__map#contact-map-3
