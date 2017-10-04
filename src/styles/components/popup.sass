@@ -1,0 +1,90 @@
+.popup
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	opacity: 0
+	visibility: hidden
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+	z-index: 1050
+	overflow: auto
+	outline: 0
+	text-align: center
+	font-size: 0
+	transform: translate3d(0, 0, 0)
+	background-color: rgba($black, .8)
+	transition: opacity .3s ease, transform .5s ease, visibility .5s
+	will-change: opacity, transform
+	&:after
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+	&.opened
+		opacity: 1
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+		visibility: visible
+	&__close
+		position: absolute
+		top: -12px
+		right: -12px
+		cursor: pointer
+		&::after
+			position: absolute
+			top: 7px
+			left: 7px
+			width: 16px
+			height: 16px
+			background: $white
+			content: ''
+			z-index: -1
+		.no-touch &:hover .icon
+			fill: $blue-dark
+		.no-touch &:active .icon
+			fill: $blue-dark
+		.icon
+			fill: $blue
+			font-size: 30px
+			+trs
+		
+	&__container
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		max-width: 600px
+		position: relative
+		padding: 40px 0 30px
+		background: $white
+		box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2)
+		margin: 30px auto
+		transition: opacity .5s ease, transform .5s ease
+		transform: translate3d(0, -100px, 0)
+		will-change: transform, opacity
+	
+	&__form
+		&-inner
+			max-width: 350px
+			margin: 20px auto 32px
+		&-field
+			&:not(:first-child)
+				margin-top: 19px
+		&-descr
+			max-width: 454px
+			margin: 25px auto 0
+			p
+				color: $gray
+				font-size: 14px
+		
+body.popup-opened
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	overflow: hidden
+
+.popup.opened .popup__container
+	-webkit-transform: translate3d(0, 0, 0)
+	-moz-transform: translate3d(0, 0, 0)
+	transform: translate3d(0, 0, 0)

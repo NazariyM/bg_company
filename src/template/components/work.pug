@@ -24,14 +24,14 @@ if work.title ? work.title : work.title = 'Работа в «Бизнес-Гар
 									.work__block-text
 										p Заинтересовало одно из наших предложений и вы хотите  попасть к нам? 
 										p Скорее связывайтесь с нашим  HR-отделом 
-									button.work__block-btn-send.btn.btn_blue(type='button') отправить резюме
+									button.work__block-btn-send.btn.btn_blue(data-popup-target='resumePopup' type='button') отправить резюме
 
 								.work__block-item.work__block-item_notify
 									p Я хочу работать в ГК «Бизнес-Гарант»,
 										br
 										|  но у вас на данный момент среди открытых вакансий, подходящих мне, нет.
 									p Что мне делать?
-									button.work__block-btn.btn.btn_sm(type='button') нажми сюда
+									button.work__block-btn.btn.btn_sm(data-popup-target='resumePopup' type='button') нажми сюда
 
 							.work__block-col
 								.work__block-item
@@ -40,7 +40,7 @@ if work.title ? work.title : work.title = 'Работа в «Бизнес-Гар
 										span ЗП - по договоренности 
 									.work__block-descr.js-dot
 										p Нашей команде профессионалов нужен активный и опытный специалист, который умеет работать в режиме многозадачности и знает бухгалтерский учет от “А” до “Я”!
-									button.work__block-btn.btn.btn_sm(type='button') ПОДРОБНЕЕ
+									button.work__block-btn.btn.btn_sm(data-popup-target='resumePopup' type='button') ПОДРОБНЕЕ
 
 								.work__block-item
 									h5.work__block-title Помощник бухгалтера без опыта работы
@@ -48,7 +48,7 @@ if work.title ? work.title : work.title = 'Работа в «Бизнес-Гар
 										span ЗП - по договоренности 
 									.work__block-descr.js-dot
 										p Мы обучаем и развиваем своих сотрудников, обеспечивая максимальные возможности для карьерного роста! Уже через несколько месяцев работы у вас появится...
-									button.work__block-btn.btn.btn_sm(type='button') ПОДРОБНЕЕ
+									button.work__block-btn.btn.btn_sm(data-popup-target='resumePopup' type='button') ПОДРОБНЕЕ
 
 							.work__block-col
 
@@ -58,7 +58,7 @@ if work.title ? work.title : work.title = 'Работа в «Бизнес-Гар
 										span ЗП - по договоренности 
 									.work__block-descr.js-dot
 										p Попав к Нам, у Вас появится уникальный шанс приобрести опыт в деле бухгалтерского учета, освоить различные системы налогообложения и получить максимальное...
-									button.work__block-btn.btn.btn_sm(type='button') ПОДРОБНЕЕ
+									button.work__block-btn.btn.btn_sm(data-popup-target='resumePopup' type='button') ПОДРОБНЕЕ
 
 								.work__block-item
 									h5.work__block-title Бухгалтер на участок «расчетно- кассовое обслуживание» 
@@ -66,6 +66,6 @@ if work.title ? work.title : work.title = 'Работа в «Бизнес-Гар
 										span ЗП - по договоренности 
 									.work__block-descr.js-dot
 										p Попав к Нам, у Вас появится уникальный шанс приобрести опыт в деле бухгалтерского учета, освоить различные системы налогообложения и получить максимальное...
-									button.work__block-btn.btn.btn_sm(type='button') ПОДРОБНЕЕ
+									button.work__block-btn.btn.btn_sm(data-popup-target='resumePopup' type='button') ПОДРОБНЕЕ
 
 						-tabCount++

@@ -1,0 +1,26 @@
+//begin resume pop-up
++b.popup(data-popup-id='resumePopup', tabindex='-1', role='dialog')
+	+e.container
+		+e.close.js-popup-close
+			+i('close')
+		+e.H3.title.title-lg Оставьте ваше резюме
+		+e.FORM.form(action='#!' method='POST')
+			+e.form-inner
+				+e.form-field
+					+b.INPUT.input(type='text' placeholder='Ваше имя' required name='')
+				+e.form-field
+					+b.INPUT.input(type='text' placeholder='Ваш номер телефона' required name='')
+				+e.form-field.append-file
+					+b.INPUT.input(type='text' placeholder='Файл резюме' disabled name='')
+					+b.LABEL ПРИКРЕПИТЬ
+						+i('clip')
+						+b.INPUT.input(type='file' required name='')
+			+e.INPUT.submit-btn.btn._blue-dark(type='submit' value='отправить резюме' name='')
+			+e.form-descr
+				+e.P Нажимая кнопку "Оставить заявку", вы даете
+					+e.BR
+					+b.A.link(href='#!') Согласие на обработку персональных данных
+					= ' '
+					| на условиях и для целей,  определенных
+					= ' '
+					+b.A.link(href='#!') Политикой конфиденциальности.

@@ -14,7 +14,8 @@
     "draggable": "^4.1.2",
     "jquery": "^2.2.4",
     "object-fit-images": "^3.2.3",
-    "slick-carousel": "^1.7.1"
+    "slick-carousel": "^1.7.1",
+    "vintage-popup": "^0.1.74"
   },
   "author": "NM <nazarriko@gmail.com>",
   "devDependencies": {

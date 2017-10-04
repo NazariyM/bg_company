@@ -1,10 +1,9 @@
 import './noTouch';
+import './popupInit';
 import CTabs from './c-tabs';
-// import './initTimer';
 import { initTimeline } from './timeline';
 import { initSliders } from './sliders';
 import { initContactMaps } from './contactMaps';
-// import { Timer } from './initTimer';
 import Dot from './initDot';
 import objectFitImages from 'object-fit-images';
 /**

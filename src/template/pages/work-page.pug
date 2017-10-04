@@ -5,7 +5,7 @@ block variables
 	- var yMap = false;
 
 block main
-	main.content(data-page='home')
+	main.content
 
 		//- info
 		include ../components/info
@@ -97,3 +97,6 @@ block main
 		//begin contact-maps
 		+b.SECTION.contact-maps
 			include ../components/contact-maps
+
+		//- popup
+		include ../components/popup

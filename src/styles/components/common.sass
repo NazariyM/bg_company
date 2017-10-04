@@ -38,13 +38,17 @@ body
   color: $white
   +f('web700', 15, 52)
   text-transform: uppercase
+  border: 0
   +trs
   &_sm
     padding: 0 23px
     height: 36px
     +f('web700', 14, 30)
   &_blue
-    background-color: #0095d6
+    background-color: $blue
+  &_blue-dark
+    padding: 0 28px
+    background: $blue-dark
   &_white
     padding: 0 28px
     background-color: $white
@@ -103,7 +107,44 @@ body
 // link
 .link
   color: $blue
-  border-bottom: 1px solid $blue
+  border-bottom: 1px solid rgba($blue, .8)
   +trs
   .no-touch &:hover
     border-bottom-color: transparent
+    
+.input
+  width: 100%
+  height: 45px
+  padding: 0 24px
+  border-radius: 5px
+  border: 2px solid rgba(203, 204, 205, 0.5)
+  background-color: $white
+  +f('web400', 16)
+  +placeholder-color($gray)
+  
+.append-file
+  position: relative
+  label
+    position: absolute
+    top: 5px
+    right: 7px
+    display: inline-block
+    padding: 0 18px 0 30px
+    height: 35px
+    line-height: 37px
+    border-radius: 5px
+    border: 0
+    background-color: #ed9c32
+    cursor: pointer
+    +f('web700', 14)
+    color: $white
+    text-transform: uppercase
+  input[type='file']
+    display: none
+  .icon
+    position: absolute
+    top: 9px
+    left: 7px
+    z-index: 1
+    font-size: 17px
+    fill: $white

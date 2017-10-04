@@ -1,0 +1,28 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Бизнес Гарант';
+	- var yMap = false;
+
+block main
+	main.content
+
+		//begin rest
+		+b.SECTION.rest
+			+e.container.container
+				+b.title-lg Что мы делаем вместе с «Бизнес-Гарант»:
+				+e.list
+					-
+						restList = [
+						'Играем в игру  Флот БГ',
+						'Читаем профессиональную литературу',
+						'Участвуем в конкурсах инстаграм',
+						'Встречаем в неформальной обстановке',
+						'Благодарим коллег и участвуем в акции “Спасибо”',
+						'Становимся лучшими сотрудниками месяца или даже года',
+						'Обучаемся и обмениваемся знаниями и опытом'
+						]
+					for restText, index in restList
+						+e.list-item
+							+e.list-icon(class=`rest-icon-${index + 1}`)
+							+e.SPAN.list-text= restText
