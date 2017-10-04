@@ -393,6 +393,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.Common = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// import './initTimer';
+
 // import { Timer } from './initTimer';
 
 
@@ -442,7 +444,7 @@ var Common = exports.Common = function () {
       (0, _objectFitImages2.default)();
       (0, _timeline.initTimeline)();
       (0, _sliders.initSliders)();
-      (0, _contactMaps.initContactMaps)();
+      // initContactMaps();
     }
   }]);
 
@@ -8624,13 +8626,15 @@ function initSliders() {
   var defaultOptions = {
     slidesToShow: 2,
     slidesToScroll: 2,
-    speed: 400,
+    speed: 800,
     prevArrow: '<button type="button" class="slider-btn slider-btn_prev">' + iconLeft + '</button>',
     nextArrow: '<button type="button" class="slider-btn slider-btn_next">' + iconRight + '</button>',
     dots: false,
     cssEase: 'ease',
     useTransform: true,
-    infinite: true
+    infinite: true,
+    accessibility: false,
+    dotsClass: 'slider-dots'
   };
 
   var $awardsSlider = $('.js-awards-slider');
@@ -8642,13 +8646,32 @@ function initSliders() {
   $goalSlider.slick($.extend({}, defaultOptions, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 1000
+    speed: 500,
+    fade: true
   }));
 
   var $favsSlider = $('.js-favs-slider');
   $favsSlider.slick($.extend({}, defaultOptions, {
     slidesToShow: 5,
     slidesToScroll: 5
+  }));
+
+  var $historySlider = $('.js-history-slider');
+  $historySlider.slick($.extend({}, defaultOptions, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true
+  }));
+
+  var $formerFeedsSlider = $('.js-former-feeds-slider');
+  $formerFeedsSlider.slick($.extend({}, defaultOptions, {
+    dots: true
+  }));
+
+  var $newSlider = $('.js-new-slider');
+  $newSlider.slick($.extend({}, defaultOptions, {
+    slidesToShow: 4,
+    slidesToScroll: 4
   }));
 
   var $mobileSlider = $('.js-mobile-slider');

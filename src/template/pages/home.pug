@@ -2,6 +2,7 @@ extends ../extend/default
 
 block variables
 	- var title = 'Бизнес Гарант';
+	- var yMap = false;
 
 block main
 	main.content(data-page='home')
@@ -15,14 +16,19 @@ block main
 		//begin goal
 		+b.SECTION.goal
 			+b.H3.title-lg Наша эволюционная цель
-			+e.bg(style='background-image: url(static/img/bg/goal_bg.jpg)')
+			+e.inner(style='background-image: url(static/img/bg/goal_bg.jpg)')
 				+e.container.container
 					+e.slider.js-goal-slider
 						-itemCount = 0
-						while itemCount < 4
+						while itemCount < 2
 							+e.item
 								+e.item-img
 									+e.IMG(src=`static/img/bg/goal_boat.png` alt='image')
+								+e.item-text
+									+e.P Мы основываем свои действия на вечных ценностях и уверены, что строить бизнес можно только так.
+							+e.item
+								+e.item-img
+									+e.IMG(src=`https://i.ytimg.com/vi/UYbqYt-pLA8/maxresdefault.jpg` alt='image')
 								+e.item-text
 									+e.P Мы основываем свои действия на вечных ценностях и уверены, что строить бизнес можно только так.
 							-itemCount++

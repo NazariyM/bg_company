@@ -1,0 +1,84 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Бизнес Гарант';
+	- var yMap = false;
+
+block main
+	main.content(data-page='home')
+
+		//- info
+		include ../components/info
+
+		//- work section
+		include ../components/work
+
+		//- history
+		//begin history
+		+b.SECTION.history
+			+e.container.container
+				+b.H3.title-lg История успеха
+				+e.slider.js-history-slider
+					-i = 0
+					while i < 4
+						+e.item
+							+e.item-img
+								+e.IMG(src='static/img/content/lead-2.png' alt='image')
+							+e.item-text
+								+e.H6.item-name Алина Бекер 
+								+e.SPAN.item-pos Руководитель Коллекторского агентства
+								+e.P Юридическая фирма “Бизнес-Гарант” - один из трек основопологающих китов, на которых в далеком 2005 году Компания отправилась в плавание по просторам Самарского рынка услуг. 
+								+e.BUTTON.btn.btn._white(type='button') ЧИТАТЬ ДАЛЬШЕ
+							-i++
+
+				+b.BUTTON.btn._blue(type='button') присоединиться к нашей команде
+
+		//begin former-feeds
+		+b.SECTION.former-feeds
+			+e.container.container
+				+b.H3.title-lg Отзывы бывших сотрудников
+				+e.slider.js-former-feeds-slider
+					-i = 0
+					while i < 4
+						+e.item
+							+e.item-person
+								+e.item-img
+									+e.IMG(src='static/img/content/former-feeds-1.jpg' alt='image')
+								+e.H5 Умнаева Мария 
+								+e.SPAN Менеджер по рекламе
+							+e.item-text
+								+e.P Бизнес-Гарант крупная развивающаяся группа компаний! В коллективе всегда дружелюбная атмосфера, взаимопомощь и доверие. Я счастлива, что работала в такой компании! Всем желаю внутренней гармонии, настоящих эмоций и клиентов, клинтов, клиентов!!!)
+								+i('quote-l')
+								+i('quote-r')
+						+e.item
+							+e.item-person
+								+e.item-img
+									+e.IMG(src='static/img/content/former-feeds-2.jpg' alt='image')
+								+e.H5 Павел Ясько 
+								+e.SPAN Директор по развитию
+							+e.item-text
+								+e.P Это самый ценный опыт в моей жизни. Я безумно благодарен всему коллективу и Илье Владимировичу. Каждый день я приходил на работу с радостью. Искренне желаю успехов и развития.
+								+i('quote-l')
+								+i('quote-r')
+						-i++
+
+				+b.BUTTON.btn._blue(type='button') присоединиться к нашей команде
+
+		//begin new
+		+b.SECTION.new
+			+e.container.container
+				+b.H3.title-lg Что нового в «Бизнес-Гарант»
+				+e.slider.js-new-slider
+					-i = 0
+					while i < 8
+						+e.item
+							+e.H6.item-title Счастье в БГ
+							+e.item-img
+								+e.IMG(src='static/img/content/new-1.png' alt='image')
+							+e.BUTTON.btn.btn(type='button') ЧИТАТЬ ПОЛНОСТЬЮ
+						+e.item
+							+e.H6.item-title О геймификации в БГ
+							+e.item-img
+								+e.IMG(src='static/img/content/new-2.png' alt='image')
+							+e.BUTTON.btn.btn(type='button') ЧИТАТЬ ПОЛНОСТЬЮ
+						-i++

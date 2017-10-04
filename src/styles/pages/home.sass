@@ -14,28 +14,6 @@
 			height: auto
 		.slick-list
 			margin: 0 -15px
-		.slick-dots
-			margin: 40px 0 0
-			font-size: 0
-			text-align: center
-			li
-				display: inline-block
-				vertical-align: middle
-				+hide-text
-				&:not(:first-child)
-					margin-left: 7px
-				&.slick-active button
-					transform: scale(1.6)
-					border-width: 2px
-					border-color: $blue-dark
-			button
-				position: relative
-				width: 10px
-				height: 10px
-				background: $white
-				border: 3px solid rgba(#878786, .4)
-				border-radius: 50%
-				transition: .3s ease
 		.slider-btn
 			top: 40%
 	&__item
@@ -65,31 +43,67 @@
 				
 // goal
 .goal
-	&__bg
+	padding: 0 0 50px
+	$parent: &
+	&__inner
 		position: relative
-		height: 500px
+		height: 498px
+		margin: 45px 0 0
 		background: no-repeat 50% 50% / cover
-		&::after
-			+coverdiv
-			background: $blue-dark
-			content: ''
-			opacity: .7
-			mix-blend-mode: multiply
 	&__container
 		max-width: 1200px
 	&__slider
 		display: none
-		margin-top: -20px
+		z-index: 1
+		padding-right: 4px
 		&.slick-initialized
 			display: block
 		.slider-btn
 			background: $white
 			.icon
 				fill: $blue-dark
+		.slick-list
+			top: -20px
 	&__item
 		position: relative
 		z-index: 2
-				
+		&.slick-active #{$parent}__item-text
+			animation: fadeInUpBig .75s .3s ease-in-out both
+		&.slick-active #{$parent}__item-img
+			animation: fadeInRight 1s cubic-bezier(0.58, 0.26, 0.32, 1.2) both
+		&-img
+			float: right
+			position: relative
+			padding-top: 44.45%
+			width: 58.12%
+			-webkit-clip-path: polygon(19.5% 0%, 100% 0%, 100% 100%, 0% 100%)
+			clip-path: polygon(19.5% 0%, 100% 0%, 100% 100%, 0% 100%)
+			animation: fadeOutRight 1s ease both
+			img
+				width: 100%
+				height: 100%
+				+coverdiv
+		&-text
+			position: absolute
+			left: 50%
+			margin-left: -240px
+			bottom: 48px
+			z-index: 3
+			max-width: 320px
+			width: 100%
+			padding: 3px
+			border-radius: 5px
+			text-align: center
+			font-size: 17px
+			color: $black
+			line-height: 23px
+			background: rgba(0, 0, 0, 0.15)
+			animation: fadeOutDownBig .75s ease-in-out both
+			p
+				padding: 10px 15px
+				background-color: $white
+				border-radius: 5px
+		
 // check-news
 .check-news
 	position: relative

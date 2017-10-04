@@ -1,5 +1,6 @@
 import './noTouch';
 import CTabs from './c-tabs';
+// import './initTimer';
 import { initTimeline } from './timeline';
 import { initSliders } from './sliders';
 import { initContactMaps } from './contactMaps';
@@ -21,7 +22,7 @@ export class Common {
     objectFitImages();
     initTimeline();
     initSliders();
-    initContactMaps();
+    // initContactMaps();
   }
 }
 

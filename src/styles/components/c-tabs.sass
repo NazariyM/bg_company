@@ -17,6 +17,12 @@
 			+f('web700', 16, 44)
 			cursor: pointer
 			+trs
+			span
+				display: inline-block
+				vertical-align: middle
+				max-width: 140px
+				line-height: 16px
+				text-align: center
 			&:not(:first-child)
 				margin-left: 10px
 			&.is-active
@@ -35,3 +41,16 @@
 			padding: 0 15px
 			transform: translateX(-50%)
 			z-index: 1
+	&_work
+		#{$parent}__tabs-nav
+			text-align: center
+		#{$parent}__tabs-el
+			padding: 0 19px
+			&:nth-child(1)
+				padding: 0 9px
+			&:nth-child(3)
+				padding: 0 25px
+			&:nth-child(4)
+				padding: 0 6px
+			&:nth-child(5)
+				padding: 0 26px
