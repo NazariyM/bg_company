@@ -1,0 +1,33 @@
+if best ? best : best = []
+if best.title ? best.title : best.title = 'Лучшие сотрудники'
+
+//begin best
++b.SECTION.best(class= best.classMod ? best.classMod : '')
+	+e.container.container
+		+e.title.title-lg= best.title
+		+b.c-tabs._work
+			+e.tabs-nav
+				-tabList = ['Месяца', 'Года']
+				-actIndex = 1
+				for tabEl, index in tabList
+					+e.tabs-el(class= index === actIndex - 1 ? 'is-active' : '')
+						+e.SPAN= tabEl
+			+e.tabs-for
+				-tabCount = 0
+				while tabCount < 2
+					+e.tab
+						.best__block
+							-imgList = [1, 2, 3, 4]
+							-actIdx = 1
+							for imgArr, idx in imgList
+								.best__worker
+									if idx === actIdx - 1
+										.best__worker-label Лучший консультант  месяца
+									.best__worker-img
+										+e.IMG(src=`static/img/content/best-${imgArr}.jpg` alt='image')
+									h6.best__worker-name Колгашкина Полина 
+									span Магазин готового бизнеса
+									p Лучшие финансовые показатели, а так же умение выходить из сложных переговоров без ущерба для компании
+						-tabCount++
+
+		+e.BUTTON.btn.btn._blue(type='button') присоединиться к нашей команде

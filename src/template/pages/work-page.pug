@@ -33,6 +33,9 @@ block main
 
 				+b.BUTTON.btn._blue(type='button') присоединиться к нашей команде
 
+		//- best employees
+		include ../components/values
+
 		//begin former-feeds
 		+b.SECTION.former-feeds
 			+e.container.container
@@ -75,10 +78,22 @@ block main
 							+e.H6.item-title Счастье в БГ
 							+e.item-img
 								+e.IMG(src='static/img/content/new-1.png' alt='image')
-							+e.BUTTON.btn.btn(type='button') ЧИТАТЬ ПОЛНОСТЬЮ
+							+e.A.item-btn.btn(href='#!') ЧИТАТЬ ПОЛНОСТЬЮ
 						+e.item
 							+e.H6.item-title О геймификации в БГ
 							+e.item-img
 								+e.IMG(src='static/img/content/new-2.png' alt='image')
-							+e.BUTTON.btn.btn(type='button') ЧИТАТЬ ПОЛНОСТЬЮ
+							+e.A.item-btn.btn(href='#!') ЧИТАТЬ ПОЛНОСТЬЮ
 						-i++
+
+		//- best employees
+		include ../components/best
+
+		//begin check-news
+		+b.SECTION.check-news
+			+e.H3.title.title-lg Будь первым в курсе наших новостей
+			include ../components/socials
+
+		//begin contact-maps
+		+b.SECTION.contact-maps
+			include ../components/contact-maps

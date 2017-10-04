@@ -19,6 +19,8 @@
 			border-radius: 5px
 			border: 3px solid #f2f2f2
 			background-color: $white
+			&:nth-child(2n)
+				margin-bottom: 0
 			p
 				font-size: 16px
 				color: $gray
@@ -171,3 +173,68 @@
 			.icon-quote-r
 				right: 0
 				bottom: 0
+				
+.new
+	padding: 40px 0
+	background-color: #f8fafc
+	&__slider
+		margin: 40px 0 0
+	&__item
+		padding: 0 15px
+		text-align: center
+		&-title
+			+f('web700', 20)
+		&-img
+			margin: 15px 0 25px
+			img
+				margin: 0 auto
+		&-btn
+			padding: 0 14px
+
+.best
+	padding: 60px 0
+	&__container
+		text-align: center
+	&__title
+		margin-bottom: 40px
+	&__block
+		margin: 30px -15px 0
+		font-size: 0
+	&__worker
+		position: relative
+		display: inline-block
+		vertical-align: top
+		width: 25%
+		padding: 0 15px
+		font-size: 17px
+		text-align: center
+		&-label
+			position: absolute
+			top: 20px
+			left: 5px
+			max-width: 150px
+			z-index: 1
+			padding: 8px 16px 8px 14px
+			border-radius: 0 5px 5px 0
+			+f('web700', 13, 13)
+			background-color: $blue
+			color: $white
+			&::after
+				position: absolute
+				left: 0
+				bottom: -6px
+				+arr(10, 6, $blue-dark, tr)
+				content: ''
+		&-name
+			+f('web700')
+		&-img
+			height: 300px
+			margin-bottom: 25px
+			+cover-img
+			border-radius: 5px
+			overflow: hidden
+		p
+			font-size: 16px
+			color: $gray
+	&__btn
+		margin-top: 50px

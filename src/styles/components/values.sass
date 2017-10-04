@@ -1,0 +1,101 @@
+.values
+	position: relative
+	$parent: &
+	&__bg
+		display: block
+		width: 100%
+		height: 100%
+	&__pic
+		position: absolute
+		img
+			pointer-events: none
+			position: relative
+			z-index: 1
+		&_left
+			left: 0
+			bottom: 0
+			width: percentage(609 / 1600)
+		&_mid
+			left: 33.8%
+			bottom: 0
+			width: percentage(727 / 1600)
+		&_right
+			top: 4.2%
+			right: 13%
+			width: percentage(942 / 1600)
+			//&::after
+				background: url("../img/bg/values-left_out.png")
+	
+	&__hover-zone
+		position: absolute
+		z-index: 4
+		&:hover + #{$parent}__text
+			opacity: 1
+			transform: scale(1)
+		&:hover ~ #{$parent}__outline
+			opacity: 1
+		&_left
+			left: 37%
+			bottom: 19%
+			width: 59%
+			height: 85%
+		&_mid
+			left: 2%
+			bottom: 0
+			width: 59%
+			height: 90%
+		&_right
+			right: 0
+			bottom: -6px
+			width: 46%
+			height: 100%
+	&__text
+		pointer-events: none
+		position: absolute
+		max-width: 390px
+		height: 231px
+		width: 100%
+		padding: 32px 50px 25px 32px
+		text-align: center
+		background: url("../img/bg/values-cloud.png") no-repeat 50% 50% / cover
+		z-index: 3
+		opacity: 0
+		transform: scale(.6)
+		transition: transform .5s ease, opacity .5s ease
+		&-title
+			+f('web700', 17)
+		p
+			font-size: 16px
+			line-height: 25px
+		&_left
+			left: 50%
+			top: -45%
+		&_mid
+			left: 40%
+			top: -3%
+		&_right
+			right: 20%
+	&__outline
+		position: absolute
+		width: calc(100% + 10px)
+		height: calc(100% + 10px)
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		background-size: cover
+		content: ''
+		z-index: 0
+		opacity: 0
+		transition: opacity .5s ease
+		&_left
+			left: -2px
+			bottom: 3px
+			background: url("../img/bg/values-left_out.png")
+		&_mid
+			left: -9.3%
+			bottom: 0
+			background: url("../img/bg/values-mid_out.png")
+		&_right
+			height: calc(100% + 18px)
+			left: -8px
+			top: -4px
+			background: url("../img/bg/values-right_out.png")
