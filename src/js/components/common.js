@@ -4,6 +4,7 @@ const Flatpickr = require('flatpickr');
 const Russian = require('flatpickr/dist/l10n/ru.js').ru;
 import fancyBox from '@fancyapps/fancybox';
 import CTabs from './c-tabs';
+import { infoCounter } from './initCounter';
 import { initTimeline } from './timeline';
 import { initSliders } from './sliders';
 import { initContactMaps } from './contactMaps';
@@ -24,6 +25,7 @@ export class Common {
     objectFitImages();
     initTimeline();
     initSliders();
+    infoCounter();
     // initContactMaps();
   }
 }

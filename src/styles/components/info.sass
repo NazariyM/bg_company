@@ -86,10 +86,36 @@
 			font-size: 20px
 			line-height: 25px
 			
-	&__timer-wrap
+	&__counter-wrap
 		max-width: 600px
 		margin: 0 auto
 		text-align: center
-	&__timer-title
+	&__counter-title
 		color: $white
 		+f('web700', 30)
+	&__counter
+		margin: 25px 0 0
+		font-size: 0
+		&-item
+			display: inline-block
+			vertical-align: top
+			color: $white
+			&:not(:first-child)
+				margin-left: 16px
+		&-digit
+			margin-bottom: 10px
+			font-size: 0
+			span
+				display: inline-block
+				width: 47px
+				height: 54px
+				line-height: 51px
+				border-radius: 5px
+				border: 2px solid #ffffff
+				background-color: rgba($blue-dark, .5)
+				font-size: 38px
+				&:not(:first-child)
+					margin-left: 4px
+		&-text
+			+f('web400i', 15)
+			

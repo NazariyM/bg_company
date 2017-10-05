@@ -15,6 +15,7 @@
     "draggable": "^4.1.2",
     "flatpickr": "^3.0.7",
     "jquery": "^2.2.4",
+    "moment": "^2.18.1",
     "object-fit-images": "^3.2.3",
     "slick-carousel": "^1.7.1",
     "vintage-popup": "^0.1.74"

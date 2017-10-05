@@ -22,6 +22,21 @@ if info ? info : info = []
 				+e.item-icon._4
 				+e.P.item-text Корпоративное  обучение
 
-		+e.timer-wrap
-			+e.timer-title Мы выплачиваем зарплату вовремя уже:
-			+e.timer.js-info-timer
+		+e.counter-wrap
+			+e.counter-title Мы выплачиваем зарплату вовремя уже:
+			+e.counter.js-info-counter(data-init-year='2005' data-init-month='7' data-init-day='6')
+				+e.counter-item
+					+e.counter-digit.js-info-counter-year
+						+e.SPAN
+						+e.SPAN
+					+e.counter-text Лет
+				+e.counter-item
+					+e.counter-digit.js-info-counter-month
+						+e.SPAN
+						+e.SPAN
+					+e.counter-text Месяцев
+				+e.counter-item
+					+e.counter-digit.js-info-counter-day
+						+e.SPAN
+						+e.SPAN
+					+e.counter-text Дней
