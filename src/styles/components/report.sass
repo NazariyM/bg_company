@@ -1,0 +1,103 @@
+.report
+	padding: 50px 0
+	&__block
+		display: flex
+		align-items: flex-start
+		margin: 30px 0 0
+	&__calendar
+		flex: 0 0 350px
+	&__events
+		flex: 1 1 auto
+		padding-left: 30px
+	&__event
+		&-date
+			display: flex
+			align-items: center
+			&-icon
+				margin-right: 15px
+			span
+				+f('web700', 20)
+		&-title
+			margin: 15px 0
+			+f('web400', 30)
+		&-descr
+			font-size: 17px
+			line-height: 27px
+			color: $gray
+	&__photos
+		text-align: center
+		&-in
+			margin: 0 -10px 20px
+			font-size: 0
+		&-item
+			display: inline-block
+			vertical-align: top
+			width: calc(33.333333% - 20px)
+			height: 146px
+			margin: 0 10px
+			border: 3px solid rgba(0, 0, 0, 0.05)
+			+cover-img
+		&-btn
+			height: 40px
+			padding: 0 30px
+			line-height: 42px
+			
+.calendar-default
+	.flatpickr-calendar
+		width: 350px
+		background: $blue url("../img/bg/calendar_bg.svg") no-repeat bottom -18px right -16px
+		+f('web700', 13)
+	.flatpickr-month
+		height: 80px
+		border-bottom: 2px solid rgba($white, .3)
+	.flatpickr-current-month
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: auto
+		padding: 0
+		color: $white
+	.flatpickr-weekdays
+		width: 272px
+		margin: 0 auto
+	.flatpickr-weekday
+		color: $white
+		text-transform: uppercase
+	.flatpickr-day
+		color: $white
+		border: 0
+		+trs
+		&:hover
+			background: $white
+			color: $blue
+	.flatpickr-day.nextMonthDay
+		color: rgba($white, .4)
+		&:hover
+			color: $blue
+	.flatpickr-day.selected
+		background: url("../img/bg/calendar_selected.png") no-repeat 50% 50%
+		&:hover
+			color: $white
+	.flatpickr-prev-month svg, .flatpickr-next-month svg
+		width: 20px
+		fill: $white
+	.flatpickr-day.today
+		background-color: #ffeb62
+		color: $black
+		border: 0
+	.flatpickr-innerContainer
+		padding: 15px 0
+		justify-content: center
+	.dayContainer
+		width: 272px
+		min-width: 272px
+		max-width: 272px
+	.flatpickr-days
+		justify-content: center
+		
+	.flatpickr-prev-month
+		top: 15px
+		left: 60px
+	.flatpickr-next-month
+		top: 15px
+		right: 60px

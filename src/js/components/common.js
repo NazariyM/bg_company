@@ -1,5 +1,8 @@
 import './noTouch';
 import './popupInit';
+const Flatpickr = require('flatpickr');
+const Russian = require('flatpickr/dist/l10n/ru.js').ru;
+import fancyBox from '@fancyapps/fancybox';
 import CTabs from './c-tabs';
 import { initTimeline } from './timeline';
 import { initSliders } from './sliders';
@@ -31,6 +34,18 @@ $tabs.each((index, el) => {
   const tab = new CTabs($(el));
   tab.init();
 });
+
+/** calendar */
+const dateInput = '.js-calendar';
+new Flatpickr(dateInput, {
+  inline: true,
+  locale: Russian,
+  animate: false
+});
+
+/** image zoom */
+const $zoomImg = $('[data-fancybox]');
+$zoomImg.fancybox();
 
 /** Export initialized common scripts by default */
 export default Common.init();

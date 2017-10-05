@@ -9,7 +9,7 @@
 			width: (100 / 7) + %
 			text-align: center
 		&-icon
-			margin: 0 auto
+			margin: 0 auto 20px
 			background: url("../img/other/rest-sprite.png") no-repeat
 
 			&.rest-icon-1
@@ -50,3 +50,84 @@
 			font-size: 15px
 			color: $black
 			border-bottom: 1px solid $black
+			
+.out-work
+	padding: 50px 0
+	background-color: #f8fafc
+	&__container
+		text-align: center
+	&__descr
+		margin: 15px 0 0
+		font-size: 20px
+		line-height: 30px
+	&__videos
+		font-size: 0
+		margin: 20px -13px 40px
+		$parent: &
+		&-item
+			display: inline-block
+			vertical-align: top
+			width: 20%
+			padding: 0 13px
+		&-link
+			position: relative
+			display: block
+			height: 115px
+			overflow: hidden
+			+cover-img
+			border: 3px solid rgba(0, 0, 0, 0.05)
+			border-radius: 5px
+			&::after
+				+coverdiv
+				background: rgba($black, .25)
+				content: ''
+			.no-touch &:hover #{$parent}-icon
+				opacity: 1
+				.icon
+					fill: #ff0000
+		&-icon
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: -22px
+			margin-top: -22px
+			opacity: .75
+			z-index: 2
+			+trs
+			&::after
+				position: absolute
+				top: 15px
+				left: 11px
+				width: 22px
+				height: 15px
+				background: $white
+				z-index: 0
+				content: ''
+			.icon
+				position: relative
+				z-index: 1
+				font-size: 44px
+				+trs
+				
+.corp-tv
+	padding: 50px 0
+	&__video-wrap
+		position: relative
+		margin: 50px auto
+		width: 680px
+		height: 446px
+		&::after
+			pointer-events: none
+			z-index: 1
+			+coverdiv
+			content: ''
+			background: url("../img/other/corp-tv.png") no-repeat 50% 50%/cover
+	&__video
+		position: absolute
+		top: 110px
+		left: 70px
+		width: 470px
+		height: 274px
+		iframe
+			width: 100%
+			height: 100%

@@ -10,7 +10,7 @@ block main
 		//begin rest
 		+b.SECTION.rest
 			+e.container.container
-				+b.title-lg Что мы делаем вместе с «Бизнес-Гарант»:
+				+b.H3.title-lg Что мы делаем вместе с «Бизнес-Гарант»:
 				+e.list
 					-
 						restList = [
@@ -26,3 +26,36 @@ block main
 						+e.list-item
 							+e.list-icon(class=`rest-icon-${index + 1}`)
 							+e.SPAN.list-text= restText
+
+		//begin out-work
+		+b.SECTION.out-work
+			+e.container.container
+				+b.H3.title-lg «Бизнес-Гарант» вне работы
+				+e.descr
+					+e.P В нашей компании принято не только хорошо работать, но и хорошо отдыхать. Поэтому мы проводим массу корпоративных мероприятий и неформальных встреч, чтобы сотрудники знакомились и общались друг с другом вне работы.
+				+e.videos
+					-i = 0
+					while i < 5
+						+e.videos-item
+							+e.A.videos-link(href='https://www.youtube.com/watch?v=Z2CZn966cUg' target='_blank')
+								+e.IMG(src='static/img/content/youtube-1.jpg' alt='image')
+								+e.DIV.videos-icon
+									+i('yt-play')
+						-i++
+				+b.A.btn._blue(href='#!') присоединиться к нашей команде
+
+		//begin corp-tv
+		+b.SECTION.corp-tv
+			+e.container.container
+				+b.H3.title-lg Корпоративное ТВ
+				+e.video-wrap
+					+e.video
+						iframe(src='https://www.youtube.com/embed/k2qgadSvNyU', frameborder='0', allowfullscreen='')
+
+		//- report
+		include ../components/report
+
+		//begin check-news
+		+b.SECTION.check-news
+			+e.H3.title.title-lg Будь первым в курсе наших новостей
+			include ../components/socials

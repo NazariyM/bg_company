@@ -9,9 +9,11 @@
     "openDocs": "start ./docs/index.html"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.1.25",
     "babel-eslint": "^8.0.1",
     "dotdotdot": "^1.7.0",
     "draggable": "^4.1.2",
+    "flatpickr": "^3.0.7",
     "jquery": "^2.2.4",
     "object-fit-images": "^3.2.3",
     "slick-carousel": "^1.7.1",
