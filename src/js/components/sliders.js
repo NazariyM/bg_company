@@ -1,5 +1,5 @@
 import slick from 'slick-carousel';
-import { svgIcon } from '../modules/dev/helpers';
+import {svgIcon} from '../modules/dev/helpers';
 
 export function initSliders() {
   const iconLeft = svgIcon('arr-l');
@@ -21,7 +21,14 @@ export function initSliders() {
 
   const $awardsSlider = $('.js-awards-slider');
   $awardsSlider.slick($.extend({}, defaultOptions, {
-    dots: true
+    dots: true,
+    responsive: [{
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
   }));
 
   const $goalSlider = $('.js-goal-slider');
@@ -35,7 +42,21 @@ export function initSliders() {
   const $favsSlider = $('.js-favs-slider');
   $favsSlider.slick($.extend({}, defaultOptions, {
     slidesToShow: 5,
-    slidesToScroll: 5
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 1279,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      }, {
+        breakpoint: 1023,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }]
   }));
 
   const $historySlider = $('.js-history-slider');

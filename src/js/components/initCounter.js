@@ -3,6 +3,9 @@ import moment from 'moment';
 export function infoCounter() {
 
   const $counter = $('.js-info-counter');
+
+  if (!$counter.length) return;
+
   const initYear = $counter.data('init-year');
   const initMonth = $counter.data('init-month');
   const initDay = $counter.data('init-day');

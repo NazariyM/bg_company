@@ -1,20 +1,56 @@
 .footer
 	&__info
-		padding: 30px 0
+		padding: 50px 0 45px
 		background: $blue-dark
+		+sm
+			padding: 35px 0 25px
+		+xs
+			padding: 20px 0
 		&-container
 			display: flex
+			+sm
+				justify-content: space-between
+			+xs
+				flex-direction: column
+				justify-content: center
+				align-items: center
 	&__logo
+		+sm
+			width: 130px
+		+xs
+			order: 1
+			width: auto
+			text-align: center
+			margin-top: 15px
 		&-link
 			display: block
 			margin-bottom: 15px
+			+sm
+				margin-bottom: 7px
+			+xs
+				width: 130px
+				margin: 0 auto 5px
 		p
 			color: $white
+			+sm
+				font-size: 14px
 	&__link-list
-		margin-left: 80px
+		margin-top: -8px
+		margin-left: 94px
+		+md
+			margin-left: 50px
+		+sm
+			margin-left: 20px
+		+xs
+			margin: 0
+			text-align: center
+			&:not(:first-of-type)
+				margin-top: 7px
 		li
 			&:not(:first-child)
 				margin-top: 10px
+				+xs
+					margin-top: 7px
 		a
 			color: $white
 			border-bottom: 1px dashed rgba($white, .4)
@@ -23,10 +59,17 @@
 				border-bottom-color: $white
 	&__container
 		display: flex
-		padding: 30px 15px
+		padding: 28px 15px
+		+sm
+			padding: 20px 15px
+		+xs
+			padding: 15px 10px 20px
 	&__dev
 		margin-left: auto
+		+sm
+			display: none
 		
 .dev
+	margin-top: 10px
 	padding-left: 20px
 	background: url("../img/logos/dev.png") no-repeat

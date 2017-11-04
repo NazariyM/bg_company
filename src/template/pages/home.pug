@@ -2,7 +2,6 @@ extends ../extend/default
 
 block variables
 	- var title = 'Бизнес Гарант';
-	- var yMap = false;
 
 block main
 	main.content
@@ -25,12 +24,20 @@ block main
 								+e.item-img
 									+e.IMG(src=`static/img/bg/goal_boat.png` alt='image')
 								+e.item-text
-									+e.P Мы основываем свои действия на вечных ценностях и уверены, что строить бизнес можно только так.
+									+e.P Мы основываем свои действия
+										+e.BR
+										| на вечных ценностях и уверены,
+										+e.BR
+										| что строить бизнес можно только так.
 							+e.item
 								+e.item-img
 									+e.IMG(src=`https://i.ytimg.com/vi/UYbqYt-pLA8/maxresdefault.jpg` alt='image')
 								+e.item-text
-									+e.P Мы основываем свои действия на вечных ценностях и уверены, что строить бизнес можно только так.
+									+e.P Мы основываем свои действия
+										+e.BR
+										| на вечных ценностях и уверены,
+										+e.BR
+										| что строить бизнес можно только так.
 							-itemCount++
 
 		//- leaders
@@ -63,7 +70,7 @@ block main
 
 		//begin check-news
 		+b.SECTION.check-news
-			+e.H3.title.title-lg Будь первым в курсе наших новостей
+			+e.H3.title.title-md Будь первым в курсе наших новостей
 			include ../components/socials
 
 		//begin favorites

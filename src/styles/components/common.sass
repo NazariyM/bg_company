@@ -1,150 +1,158 @@
 // basic styles
 body
-  min-width: 320px
-  color: $black
-  +f('web400', 16, 23)
-
-// layout
-.out
-  overflow: hidden
+	min-width: 320px
+	color: $black
+	+f('web400', 16, 23)
+	&.is-locked
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		height: 0
+		overflow: hidden
 
 .container
-  max-width: 1140px
-  margin: 0 auto
-  padding: 0 15px
+	max-width: 1140px
+	margin: 0 auto
+	padding: 0 15px
+	+xs
+		padding: 0 10px
 
 // titles
 .title-lg
-  +f('web400', 50)
-  line-height: 1
-  color: $black
-  text-align: center
+	+f('web400', 50)
+	line-height: 1
+	color: $black
+	text-align: center
+	+xs
+		font-size: 34px
+
 .title-md
-  @extend .title-lg
-  +f('web400', 35)
+	@extend .title-lg
+	+f('web400', 35)
 
 .is-hidden
-  +hide-el
+	+hide-el
 
 // buttons
 .btn
-  display: inline-block
-  vertical-align: top
-  padding: 0 26px
-  height: 50px
-  border-radius: 5px
-  background: $orange-light
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05)
-  color: $white
-  +f('web700', 15, 52)
-  text-transform: uppercase
-  border: 0
-  +trs
-  &_sm
-    padding: 0 23px
-    height: 36px
-    +f('web700', 14, 30)
-  &_blue
-    background-color: $blue
-  &_blue-dark
-    padding: 0 28px
-    background: $blue-dark
-  &_white
-    padding: 0 28px
-    background-color: $white
-    border: 2px solid $blue-dark
-    color: $blue-dark
-  .no-touch &:hover
-  
+	display: inline-block
+	vertical-align: top
+	padding: 0 26px
+	height: 50px
+	border-radius: 5px
+	background: $orange-light
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05)
+	color: $white
+	+f('web700', 15, 52)
+	text-transform: uppercase
+	border: 0
+	+trs
+	&_sm
+		padding: 0 26px
+		height: 36px
+		+f('web700', 14, 30)
+	&_blue
+		background-color: $blue
+	&_blue-dark
+		padding: 0 28px
+		background: $blue-dark
+	&_white
+		padding: 0 28px
+		background-color: $white
+		border: 2px solid $blue-dark
+		color: $blue-dark
+	.no-touch &:hover
+
 //sliders defaults
 .slider-btn
-  position: absolute
-  z-index: 1
-  top: 50%
-  margin-top: -20px
-  width: 40px
-  height: 40px
-  background-color: $blue
-  border-radius: 50%
-  font-size: 0
-  text-align: center
-  +trs
-  &:hover
-    background-color: $blue-dark
-  .icon
-    position: relative
-    font-size: 18px
-  &_prev
-    left: -65px
-  &_next
-    right: -65px
-    .icon
-      left: 2px
-      
+	position: absolute
+	z-index: 1
+	top: 50%
+	margin-top: -20px
+	width: 40px
+	height: 40px
+	background-color: $blue
+	border-radius: 50%
+	font-size: 0
+	text-align: center
+	+trs
+	&:hover
+		background-color: $blue-dark
+	.icon
+		position: relative
+		font-size: 18px
+	&_prev
+		left: -65px
+	&_next
+		right: -65px
+		.icon
+			left: 2px
+
 .slider-dots
-  margin: 40px 0 0
-  font-size: 0
-  text-align: center
-  li
-    display: inline-block
-    vertical-align: middle
-    +hide-text
-    &:not(:first-child)
-      margin-left: 7px
-    &.slick-active button
-      transform: scale(1.6)
-      border-width: 2px
-      border-color: $blue-dark
-  button
-    position: relative
-    width: 10px
-    height: 10px
-    background: $white
-    border: 3px solid rgba(#878786, .4)
-    border-radius: 50%
-    transition: .3s ease
-      
+	margin: 40px 0 0
+	font-size: 0
+	text-align: center
+	li
+		display: inline-block
+		vertical-align: middle
+		+hide-text
+		&:not(:first-child)
+			margin-left: 7px
+		&.slick-active button
+			transform: scale(1.6)
+			border-width: 2px
+			border-color: $blue-dark
+	button
+		position: relative
+		width: 10px
+		height: 10px
+		background: $white
+		border: 3px solid rgba(#878786, .4)
+		border-radius: 50%
+		transition: .3s ease
+
 // link
 .link
-  color: $blue
-  border-bottom: 1px solid rgba($blue, .8)
-  +trs
-  .no-touch &:hover
-    border-bottom-color: transparent
-    
+	color: $blue
+	border-bottom: 1px solid rgba($blue, .8)
+	+trs
+	.no-touch &:hover
+		border-bottom-color: transparent
+
 .input
-  width: 100%
-  height: 45px
-  padding: 0 24px
-  border-radius: 5px
-  border: 2px solid rgba(203, 204, 205, 0.5)
-  background-color: $white
-  +f('web400', 16)
-  +placeholder-color($gray)
-  
+	width: 100%
+	height: 45px
+	padding: 0 24px
+	border-radius: 5px
+	border: 2px solid rgba(203, 204, 205, 0.5)
+	background-color: $white
+	+f('web400', 16)
+	+placeholder-color($gray)
+
 .append-file
-  position: relative
-  label
-    position: absolute
-    top: 5px
-    right: 7px
-    display: inline-block
-    padding: 0 18px 0 30px
-    height: 35px
-    line-height: 37px
-    border-radius: 5px
-    border: 0
-    background-color: #ed9c32
-    cursor: pointer
-    +f('web700', 14)
-    color: $white
-    text-transform: uppercase
-  input[type='file']
-    display: none
-  .icon
-    position: absolute
-    top: 9px
-    left: 7px
-    z-index: 1
-    font-size: 17px
-    fill: $white
+	position: relative
+	label
+		position: absolute
+		top: 5px
+		right: 7px
+		display: inline-block
+		padding: 0 18px 0 30px
+		height: 35px
+		line-height: 37px
+		border-radius: 5px
+		border: 0
+		background-color: #ed9c32
+		cursor: pointer
+		+f('web700', 14)
+		color: $white
+		text-transform: uppercase
+	input[type='file']
+		display: none
+	.icon
+		position: absolute
+		top: 9px
+		left: 7px
+		z-index: 1
+		font-size: 17px
+		fill: $white

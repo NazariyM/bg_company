@@ -1,9 +1,13 @@
 // awards
 .awards
-	padding: 40px 0
+	padding: 61px 0 65px
+	+sm
+		padding: 20px 0 45px
 	&__slider
 		display: none
 		margin: 40px 0 0
+		+sm
+			padding: 0 60px
 		&.slick-initialized
 			display: block
 		.slick-track
@@ -14,19 +18,42 @@
 			height: auto
 		.slick-list
 			margin: 0 -15px
+			+md
+				margin: 0 -10px
+			+sm
+				margin: 0
+		.slider-dots
+			+sm
+				margin: 25px 0 0
 		.slider-btn
 			top: 40%
+			+md
+				display: none!important
+			+sm
+				display: block!important
+			&_prev
+				+sm
+					left: 0
+			&_next
+				+sm
+					right: 0
 	&__item
 		margin: 0 15px
 		border-radius: 5px
 		border: 3px solid rgba(0, 0, 0, 0.05)
 		background-color: $white
 		font-size: 0
+		+md
+			margin: 0 10px
+		+sm
+			margin: 0
 		&-inner
 			display: flex
 			align-items: center
 			height: 100%
-			padding: 20px 45px 20px 30px
+			padding: 30px 45px 25px 30px
+			+md
+				padding: 25px 20px
 		&-img
 			flex: 0 0 102px
 			+cover-img
@@ -43,27 +70,68 @@
 				
 // goal
 .goal
+	position: relative
 	padding: 0 0 50px
 	$parent: &
+	+sm
+		padding: 0 0 25px
+	&::after
+		position: absolute
+		top: 105px
+		bottom: 50px
+		left: 0
+		right: 0
+		background: #00629a
+		z-index: -1
+		content: ''
+		+xs
+			display: none
 	&__inner
 		position: relative
-		height: 498px
-		margin: 45px 0 0
+		height: 578px
+		max-width: 1920px
+		margin: 55px auto 0
 		background: no-repeat 50% 50% / cover
+		+r(1919)
+			height: 498px
+			margin: 45px auto 0
+		+md
+			height: 414px
+		+sm
+			height: 308px
+		+xs
+			height: auto
+			margin: 25px auto 0
 	&__container
-		max-width: 1200px
+		max-width: 1400px
+		+r(1919)
+			max-width: 1200px
+		+xs
+			padding: 0
 	&__slider
 		display: none
 		z-index: 1
 		padding-right: 4px
+		+md
+			padding-right: 0
 		&.slick-initialized
 			display: block
 		.slider-btn
 			background: $white
 			.icon
 				fill: $blue-dark
+			&_next
+				+r(1365)
+					display: none!important
+			&_prev
+				left: 20px
+				+xs
+					left: 5px
+					top: 10%
 		.slick-list
 			top: -20px
+			+xs
+				top: 0
 	&__item
 		position: relative
 		z-index: 2
@@ -79,6 +147,9 @@
 			-webkit-clip-path: polygon(19.5% 0%, 100% 0%, 100% 100%, 0% 100%)
 			clip-path: polygon(19.5% 0%, 100% 0%, 100% 100%, 0% 100%)
 			animation: fadeOutRight 1s ease both
+			+xs
+				width: 100%
+				padding-top: 100%
 			img
 				width: 100%
 				height: 100%
@@ -86,7 +157,7 @@
 		&-text
 			position: absolute
 			left: 50%
-			margin-left: -240px
+			margin-left: -259px
 			bottom: 48px
 			z-index: 3
 			max-width: 320px
@@ -99,15 +170,32 @@
 			line-height: 23px
 			background: rgba(0, 0, 0, 0.15)
 			animation: fadeOutDownBig .75s ease-in-out both
+			+md
+				margin-left: -220px
+			+sm
+				bottom: 15px
+				font-size: 16px
+				line-height: 20px
+			+xs
+				bottom: 5px
+				left: 5px
+				right: 5px
+				padding: 0
+				border-radius: 5px 5px 0 0
+				margin-left: 0
 			p
-				padding: 10px 15px
+				padding: 15px 10px
 				background-color: $white
 				border-radius: 5px
-		
+				+sm
+					padding: 10px 5px
+				+xs
+					border-radius: 5px 5px 0 0
+
 // check-news
 .check-news
 	position: relative
-	padding: 50px 0
+	padding: 60px 0 40px
 	background: #f2f2f2
 	z-index: 1
 	&::after
@@ -117,7 +205,7 @@
 		opacity: .1
 		z-index: -1
 	&__title
-		margin-bottom: 20px
+		margin-bottom: 25px
 	
 // socials
 .socials
@@ -151,9 +239,13 @@
 			
 // favs
 .favs
-	padding: 75px 0
+	padding: 90px 0 95px
+	+sm
+		padding: 50px 0
 	&__slider
-		margin: 30px 0 0
+		margin: 40px 0 0
+		+md
+			padding: 0 40px
 		.slick-track
 			display: flex
 			align-items: center
@@ -161,6 +253,14 @@
 			background: 0 0
 			.icon
 				fill: $black
+			&_next
+				right: -55px
+				+md
+					right: 0
+			&_prev
+				left: -55px
+				+md
+					left: 0
 		&-item
 			position: relative
 			text-align: center
@@ -194,26 +294,62 @@
 	&__item
 		&:not(:first-child)
 			margin-left: 50px
+			#{$parent}_header &
+				margin-left: 20px
+			#{$parent}_footer &
+				+md
+					margin-left: 35px
+				+sm
+					margin-left: 25px
+				+xs
+					margin: 15px 0 0
+		+xs
+			text-align: center
 	&__city
 		display: block
 		margin-bottom: 7px
 		color: $gray
+		#{$parent}_header &
+			+sm
+				margin-bottom: 2px
+		#{$parent}_footer &
+			margin-bottom: -5px
+			+sm
+				font-size: 15px
 	&__num
 		color: $black
 		font-size: 28px
 		+trs
 		.no-touch &:hover
 			color: $blue-dark
+		#{$parent}_header &
+			+sm
+				font-size: 19px
+		#{$parent}_footer &
+			font-size: 25px
+			+sm
+				font-size: 20px
 	.icon
 		position: absolute
 		top: 5px
-		left: 10px
+		left: -11px
 		transform: rotate(12deg)
 		fill: $blue-dark
 		font-size: 42px
+		+sm
+			display: none
 	&_header
-		padding-left: 60px
+		padding-left: 41px
 		padding-right: 15px
+		+sm
+			padding: 0 15px
+		+xs
+			display: none
 	&_footer
-		#{$parent}__city
-			margin-bottom: 0
+		+sm
+			width: 100%
+			justify-content: space-between
+		+xs
+			flex-direction: column
+			justify-content: center
+			align-items: center

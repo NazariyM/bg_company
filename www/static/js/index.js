@@ -1831,7 +1831,7 @@ function loadLocale(name) {
             module && module.exports) {
         try {
             oldLocale = globalLocale._abbr;
-            __webpack_require__(129)("./" + name);
+            __webpack_require__(130)("./" + name);
             // because defineLocale currently also sets the global locale, we
             // want to undo that for lazy loaded locales
             getSetGlobalLocale(oldLocale);
@@ -4466,7 +4466,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(128)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(129)(module)))
 
 /***/ }),
 /* 1 */
@@ -15902,7 +15902,7 @@ return zhTw;
 
 __webpack_require__(120);
 
-__webpack_require__(142);
+__webpack_require__(143);
 
 /***/ }),
 /* 120 */
@@ -15922,27 +15922,29 @@ __webpack_require__(121);
 
 __webpack_require__(122);
 
-var _fancybox = __webpack_require__(124);
+var _mobNav = __webpack_require__(124);
+
+var _fancybox = __webpack_require__(125);
 
 var _fancybox2 = _interopRequireDefault(_fancybox);
 
-var _cTabs = __webpack_require__(125);
+var _cTabs = __webpack_require__(126);
 
 var _cTabs2 = _interopRequireDefault(_cTabs);
 
-var _initCounter = __webpack_require__(127);
+var _initCounter = __webpack_require__(128);
 
-var _timeline = __webpack_require__(130);
+var _timeline = __webpack_require__(131);
 
-var _sliders = __webpack_require__(132);
+var _sliders = __webpack_require__(133);
 
-var _contactMaps = __webpack_require__(136);
+var _contactMaps = __webpack_require__(137);
 
-var _initDot = __webpack_require__(137);
+var _initDot = __webpack_require__(138);
 
 var _initDot2 = _interopRequireDefault(_initDot);
 
-var _objectFitImages = __webpack_require__(139);
+var _objectFitImages = __webpack_require__(140);
 
 var _objectFitImages2 = _interopRequireDefault(_objectFitImages);
 
@@ -15950,8 +15952,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Flatpickr = __webpack_require__(140);
-var Russian = __webpack_require__(141).ru;
+var Flatpickr = __webpack_require__(141);
+var Russian = __webpack_require__(142).ru;
 
 /**
  * Website's common scripts.
@@ -15976,7 +15978,7 @@ var Common = exports.Common = function () {
       (0, _timeline.initTimeline)();
       (0, _sliders.initSliders)();
       (0, _initCounter.infoCounter)();
-      // initContactMaps();
+      (0, _contactMaps.initContactMaps)();
     }
   }]);
 
@@ -16073,6 +16075,66 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!function(){function t(p,i){return void 0===th
 
 /***/ }),
 /* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MobNav = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _helpers = __webpack_require__(1);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MobNav = exports.MobNav = function () {
+  function MobNav() {
+    _classCallCheck(this, MobNav);
+
+    this.$btn = $('.js-hamburger');
+    this.$nav = $('.js-nav');
+    this.init();
+  }
+
+  _createClass(MobNav, [{
+    key: 'toggleNav',
+    value: function toggleNav() {
+      this.$btn.on('click', function () {
+        $(this).toggleClass(_helpers.css.active);
+        $(this).parent().prev(this.$nav).toggleClass(_helpers.css.active);
+        _helpers.$body.toggleClass(_helpers.css.locked);
+      });
+    }
+  }, {
+    key: 'onResize',
+    value: function onResize() {
+      var _this = this;
+
+      _helpers.$window.on('resize', function () {
+        _this.$nav.removeClass(_helpers.css.active);
+        _this.$btn.removeClass(_helpers.css.active);
+        _helpers.$body.removeClass(_helpers.css.locked);
+      });
+    }
+  }, {
+    key: 'init',
+    value: function init() {
+      this.toggleNav();
+      this.onResize();
+    }
+  }]);
+
+  return MobNav;
+}();
+
+exports.default = new MobNav();
+
+/***/ }),
+/* 125 */
 /***/ (function(module, exports) {
 
 // ==================================================
@@ -21018,7 +21080,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!function(){function t(p,i){return void 0===th
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21030,7 +21092,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _gsap = __webpack_require__(126);
+var _gsap = __webpack_require__(127);
 
 var _helpers = __webpack_require__(1);
 
@@ -21121,7 +21183,7 @@ var CTabs = function () {
 exports.default = CTabs;
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -29053,7 +29115,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29073,6 +29135,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function infoCounter() {
 
   var $counter = $('.js-info-counter');
+
+  if (!$counter.length) return;
+
   var initYear = $counter.data('init-year');
   var initMonth = $counter.data('init-month');
   var initDay = $counter.data('init-day');
@@ -29139,7 +29204,7 @@ function infoCounter() {
 }
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29167,7 +29232,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -29416,10 +29481,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 129;
+webpackContext.id = 130;
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29432,7 +29497,7 @@ exports.initTimeline = initTimeline;
 
 var _helpers = __webpack_require__(1);
 
-var Draggable = __webpack_require__(131);
+var Draggable = __webpack_require__(132);
 function initTimeline() {
   var $timeline = $('.js-timeline');
 
@@ -29475,13 +29540,13 @@ function initTimeline() {
 }
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(a,b){ true?module.exports=b():"function"==typeof define&&define.amd?define([],b):a.Draggable=b()}(this,function(){"use strict";function a(a,b){var c=this,d=k.bind(c.start,c),e=k.bind(c.drag,c),g=k.bind(c.stop,c);if(!f(a))throw new TypeError("Draggable expects argument 0 to be an Element");b=k.assign({},i,b),k.assign(c,{element:a,handle:b.handle&&f(b.handle)?b.handle:a,handlers:{start:{mousedown:d,touchstart:d},move:{mousemove:e,mouseup:g,touchmove:e,touchend:g}},options:b}),c.initialize()}function b(a){return parseInt(a,10)}function c(a){return"currentStyle"in a?a.currentStyle:getComputedStyle(a)}function d(a){return a instanceof Array}function e(a){return void 0!==a&&null!==a}function f(a){return a instanceof Element||"undefined"!=typeof HTMLDocument&&a instanceof HTMLDocument}function g(a){return a instanceof Function}function h(){}var i={grid:0,filterTarget:null,limit:{x:null,y:null},threshold:0,setCursor:!1,setPosition:!0,smoothDrag:!0,useGPU:!0,onDrag:h,onDragStart:h,onDragEnd:h},j={transform:function(){for(var a=" -o- -ms- -moz- -webkit-".split(" "),b=document.body.style,c=a.length;c--;){var d=a[c]+"transform";if(d in b)return d}}()},k={assign:function(){for(var a=arguments[0],b=arguments.length,c=1;b>c;c++){var d=arguments[c];for(var e in d)a[e]=d[e]}return a},bind:function(a,b){return function(){a.apply(b,arguments)}},on:function(a,b,c){if(b&&c)k.addEvent(a,b,c);else if(b)for(var d in b)k.addEvent(a,d,b[d])},off:function(a,b,c){if(b&&c)k.removeEvent(a,b,c);else if(b)for(var d in b)k.removeEvent(a,d,b[d])},limit:function(a,b){return d(b)?(b=[+b[0],+b[1]],a<b[0]?a=b[0]:a>b[1]&&(a=b[1])):a=+b,a},addEvent:"attachEvent"in Element.prototype?function(a,b,c){a.attachEvent("on"+b,c)}:function(a,b,c){a.addEventListener(b,c,!1)},removeEvent:"attachEvent"in Element.prototype?function(a,b,c){a.detachEvent("on"+b,c)}:function(a,b,c){a.removeEventListener(b,c)}};return k.assign(a.prototype,{setOption:function(a,b){var c=this;return c.options[a]=b,c.initialize(),c},get:function(){var a=this.dragEvent;return{x:a.x,y:a.y}},set:function(a,b){var c=this,d=c.dragEvent;return d.original={x:d.x,y:d.y},c.move(a,b),c},dragEvent:{started:!1,x:0,y:0},initialize:function(){var a,b=this,d=b.element,e=(b.handle,d.style),f=c(d),g=b.options,h=j.transform,i=b._dimensions={height:d.offsetHeight,left:d.offsetLeft,top:d.offsetTop,width:d.offsetWidth};g.useGPU&&h&&(a=f[h],"none"===a&&(a=""),e[h]=a+" translate3d(0,0,0)"),g.setPosition&&(e.display="block",e.left=i.left+"px",e.top=i.top+"px",e.bottom=e.right="auto",e.margin=0,e.position="absolute"),g.setCursor&&(e.cursor="move"),b.setLimit(g.limit),k.assign(b.dragEvent,{x:i.left,y:i.top}),k.on(b.handle,b.handlers.start)},start:function(a){var b=this,c=b.getCursor(a),d=b.element;b.useTarget(a.target||a.srcElement)&&(a.preventDefault?a.preventDefault():a.returnValue=!1,b.dragEvent.oldZindex=d.style.zIndex,d.style.zIndex=1e4,b.setCursor(c),b.setPosition(),b.setZoom(),k.on(document,b.handlers.move))},drag:function(a){var b=this,c=b.dragEvent,d=b.element,e=b._cursor,f=b._dimensions,g=b.options,h=f.zoom,i=b.getCursor(a),j=g.threshold,k=(i.x-e.x)/h+f.left,l=(i.y-e.y)/h+f.top;!c.started&&j&&Math.abs(e.x-i.x)<j&&Math.abs(e.y-i.y)<j||(c.original||(c.original={x:k,y:l}),c.started||(g.onDragStart(d,k,l,a),c.started=!0),b.move(k,l)&&g.onDrag(d,c.x,c.y,a))},move:function(a,b){var c=this,d=c.dragEvent,e=c.options,f=e.grid,g=c.element.style,h=c.limit(a,b,d.original.x,d.original.y);return!e.smoothDrag&&f&&(h=c.round(h,f)),h.x!==d.x||h.y!==d.y?(d.x=h.x,d.y=h.y,g.left=h.x+"px",g.top=h.y+"px",!0):!1},stop:function(a){var b,c=this,d=c.dragEvent,e=c.element,f=c.options,g=f.grid;k.off(document,c.handlers.move),e.style.zIndex=d.oldZindex,f.smoothDrag&&g&&(b=c.round({x:d.x,y:d.y},g),c.move(b.x,b.y),k.assign(c.dragEvent,b)),c.dragEvent.started&&f.onDragEnd(e,d.x,d.y,a),c.reset()},reset:function(){this.dragEvent.started=!1},round:function(a){var b=this.options.grid;return{x:b*Math.round(a.x/b),y:b*Math.round(a.y/b)}},getCursor:function(a){return{x:(a.targetTouches?a.targetTouches[0]:a).clientX,y:(a.targetTouches?a.targetTouches[0]:a).clientY}},setCursor:function(a){this._cursor=a},setLimit:function(a){var b=this,c=function(a,b){return{x:a,y:b}};if(g(a))b.limit=a;else if(f(a)){var d=b._dimensions,h=a.scrollHeight-d.height,i=a.scrollWidth-d.width;b.limit=function(a,b){return{x:k.limit(a,[0,i]),y:k.limit(b,[0,h])}}}else if(a){var j={x:e(a.x),y:e(a.y)};b.limit=j.x||j.y?function(b,c){return{x:j.x?k.limit(b,a.x):b,y:j.y?k.limit(c,a.y):c}}:c}else b.limit=c},setPosition:function(){var a=this,c=a.element,d=c.style;k.assign(a._dimensions,{left:b(d.left)||c.offsetLeft,top:b(d.top)||c.offsetTop})},setZoom:function(){for(var a=this,b=a.element,d=1;b=b.offsetParent;){var e=c(b).zoom;if(e&&"normal"!==e){d=e;break}}a._dimensions.zoom=d},useTarget:function(a){var b=this.options.filterTarget;return b instanceof Function?b(a):!0},destroy:function(){k.off(this.handle,this.handlers.start),k.off(document,this.handlers.move)}}),a});
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29492,7 +29557,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.initSliders = initSliders;
 
-var _slickCarousel = __webpack_require__(133);
+var _slickCarousel = __webpack_require__(134);
 
 var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
 
@@ -29520,7 +29585,14 @@ function initSliders() {
 
   var $awardsSlider = $('.js-awards-slider');
   $awardsSlider.slick($.extend({}, defaultOptions, {
-    dots: true
+    dots: true,
+    responsive: [{
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
   }));
 
   var $goalSlider = $('.js-goal-slider');
@@ -29534,7 +29606,20 @@ function initSliders() {
   var $favsSlider = $('.js-favs-slider');
   $favsSlider.slick($.extend({}, defaultOptions, {
     slidesToShow: 5,
-    slidesToScroll: 5
+    slidesToScroll: 5,
+    responsive: [{
+      breakpoint: 1279,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+      }
+    }, {
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    }]
   }));
 
   var $historySlider = $('.js-history-slider');
@@ -29571,7 +29656,7 @@ function initSliders() {
 }
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -32572,9 +32657,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 134 */,
 /* 135 */,
-/* 136 */
+/* 136 */,
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32629,7 +32714,7 @@ function initContactMaps() {
 }
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32642,7 +32727,7 @@ exports.Dot = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(138);
+__webpack_require__(139);
 
 var _helpers = __webpack_require__(1);
 
@@ -32691,7 +32776,7 @@ var Dot = exports.Dot = function () {
 exports.default = new Dot();
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 /*
@@ -33363,7 +33448,7 @@ exports.default = new Dot();
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33601,7 +33686,7 @@ module.exports = fix;
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -35957,7 +36042,7 @@ Date.prototype.fp_incr = function (days) {
 if (true) module.exports = flatpickr;
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* Russian locals for flatpickr */
@@ -35978,7 +36063,7 @@ flatpickr.l10ns.ru.months = {
 if (true) module.exports = flatpickr.l10ns;
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

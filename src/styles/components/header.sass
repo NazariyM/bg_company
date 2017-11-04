@@ -5,17 +5,72 @@
 	&__container
 		display: flex
 		justify-content: space-between
-		padding: 28px 15px
+		padding: 41px 15px 26px
+		+sm
+			align-items: center
+			padding: 23px 15px 20px
+		+xs
+			flex-wrap: wrap
+			padding: 15px 10px
+	&__logo
+		+sm
+			width: 150px
+		+xs
+			width: 110px
 	&__call
+		margin-top: -13px
 		text-align: center
+		+sm
+			margin-top: 0
+			padding: 0 15px 0 0
+		+xs
+			order: 1
+			flex: 1 0 100%
+			margin-top: 15px
+			padding: 0
 		&-btn
-			margin-bottom: 5px
+			margin-bottom: 12px
 			+f('web400', 16, 30)
 			text-transform: none
 			background: $orange
-			
+			+sm
+				margin-bottom: 0
+			+xs
+				width: 100%
+		p
+			line-height: 20px
+			+sm
+				display: none
+				
+	&__hamburger
+		margin-top: 4px!important
+		+sm
+			display: block
+		
 .nav
 	background: $blue-dark
+	+sm
+		position: absolute
+		width: 100%
+		height: 100vh
+		top: 92px
+		left: 0
+		bottom: 0
+		right: 0
+		z-index: 10
+		overflow: auto
+		opacity: 0
+		visibility: hidden
+		transform: translate3d(0, 100px, 0)
+		transition: transform .4s ease, opacity .4s ease, visibility 0s .4s
+	+xs
+		top: 120px
+	&.is-active
+		opacity: 1
+		visibility: visible
+		-webkit-transform: translate3d(0, 0, 0)
+		transform: translate3d(0, 0, 0)
+		transition: transform .4s ease, opacity .4s ease, visibility 0s 0s
 	&__list
 		max-width: 1170px
 		margin: 0 auto
@@ -23,17 +78,41 @@
 		text-align: center
 		font-size: 0
 		+justify
+		+sm
+			margin-top: 150px
+			padding: 0
+			text-align: center
+			-ms-text-align-last: center
+			text-align-last: center
+			&::after
+				display: none
+		+xs
+			display: flex
+			flex-direction: column
+			justify-content: center
+			margin-top: 0
+			height: calc(100% - 120px)
+			overflow: auto
 		li
 			display: inline-block
 			vertical-align: middle
 			height: 55px
-			padding: 0 20px
+			padding: 0 23px
 			line-height: 55px
+			+md
+				padding: 0 10px
+			+sm
+				display: block
+				margin: 10px 0
 			&.is-active
 				background: $white
 				border-radius: 5px 5px 0 0
+				+sm
+					border-radius: 0
 			&.is-active a
 				color: $blue-dark
 			a
 				color: $white
 				font-size: 16px
+				+sm
+					font-size: 17px

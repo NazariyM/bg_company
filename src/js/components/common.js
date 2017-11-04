@@ -1,5 +1,6 @@
 import './noTouch';
 import './popupInit';
+import { MobNav } from './mobNav';
 const Flatpickr = require('flatpickr');
 const Russian = require('flatpickr/dist/l10n/ru.js').ru;
 import fancyBox from '@fancyapps/fancybox';
@@ -26,7 +27,7 @@ export class Common {
     initTimeline();
     initSliders();
     infoCounter();
-    // initContactMaps();
+    initContactMaps();
   }
 }
 
